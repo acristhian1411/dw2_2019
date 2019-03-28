@@ -9,73 +9,125 @@
 
 
 <!-- Titulo -->
-<div class="header">
-    <h1>Mi sitio</h1>
-</div>
+<header>
+  <h1>Mi sitio</h1>
+
+</header>
 <div class="contenedor">
 
 
 <!-- Contenedor lateral -->
-<div class="lateral">
+<aside>
 
 <!-- Menu -->
   <div class="caja">
   <p>Menu</p>
-    <menu type="toolbar">
-      <ul>
-        <li><input name="login" type="submit" value="portada">
-        </li>
-        <li><input name="login" type="submit" value="ingresar">
-        </li>
-      </ul>
-    </menu>
+  <nav>
+    <ul>
+      <li class="navbot" onclick="link1()"><a href="#" >Linh 1</a> </li>
+      <li class="navbot" onclick="link1()"><a href="#" >Linh 2</a> </li>
+    </ul>
+
+  </nav>
   </div>
 
 <!-- Texto ejemplo -->
   <div class="caja">
-    <fieldset>
+
       <legend>Atencion</legend>
       <div>
-        <label >Texto</label>
+        <label id="texto_box" >Texto</label>
       </div>
-    </fieldset>
+
   </div>
 
-</div>
+</aside>
 
 <!-- formulario -->
-<div class="principal">
-    <form id="app-login" action="process.php">
-      <fieldset>
-        <legend>Login Details</legend>
+<section>
+
+    <form id="app-login" action="">
 
         <div>
-          <label for="user-name">Username:</label>
-          <input name="user-name" type="email" placeholder="Your username is your email address" required autofocus>
+          <label for="user-name">Email:</label>
+          <input name="user-name" id="user-name" type="text" placeholder="Ingrese email aqui" >
         </div>
 
         <div>
           <label for="password">Password:</label>
-          <input name="password" type="password" placeholder="6 digits, a combination of numbers and letters" required>
+          <input name="password" id="password" type="password" placeholder="6 digitos" required>
         </div>
-
         <div>
-          <input name="login" type="submit" value="Login">
+          <label for="select">Select:</label>
+          <select id="select" name="title">
+            <option value="1">Frutas</option>
+            <option value="2">verduras</option>
+
+                </select>
+                <select id="select2" name="title">
+
+                        </select>
+        </div>
+        <div>
+          <input name="login" onclick="ingresar()" type="button" value="Login">
         </div>
 
-      </fieldset>
     </form>
+  </section>
+
 
 </div>
-<br>
-</div>
+
 <!-- footer -->
-<div class="footer">
-  <fieldset>
-    <footer>Creado en dw2</footer>
 
-  </fieldset>
-</div>
+
+    <footer>  <address>
+        <p>Diseño y Programación Web 2 <a href="#">UNAE</a>.</p>
+      </address>
+      <small>Copyright &copy; <time>2019</time></small>
+</footer>
+
+
+
+
+<script type="text/javascript">
+
+function link1() {
+window.alert("No hay página");
+}
+
+
+function ingresar() {
+//  var x = document.getElementById("user-name").value;
+//  var i = document.getElementById("texto_box");
+//    i.innerHTML  = x;
+var x = document.getElementById("select").value;
+ var y = document.getElementById("select2");
+ var vegetales = [["naranja",1], ["manzana",1], ["pera",1], ["lechuga",2], ["cebolla", 2],["papa",2]];
+ var op;
+ for (var i = 0; i < vegetales.length; i++) {
+   if (vegetales[i][1] == x) {
+     op = op + "<option> "  +vegetales[i][0]+"</option> " ;
+
+   }
+
+ }
+ y.innerHTML  = op;
+}
+
+var x = document.getElementById("app-login");
+x.addEventListener("focus", myFocusFunction, true);
+x.addEventListener("blur", myBlurFunction, true);
+
+function myFocusFunction() {
+  document.getElementById("user-name").style.backgroundColor = "red";
+}
+
+function myBlurFunction() {
+  document.getElementById("user-name").style.backgroundColor = "";
+}
+
+</script>
 
   </body>
 </html>
