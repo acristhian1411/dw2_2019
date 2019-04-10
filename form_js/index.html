@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ingresar</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+
+<!-- Titulo -->
+<header>
+  <h1>Mi sitio</h1>
+
+</header>
+<div class="contenedor">
+
+
+
+
+<!-- formulario -->
+<section>
+
+    <form id="login" action="" onsubmit="return false;">
+
+        <div>
+          <label for="nombre">Nombre:</label>
+          <input name="nombre" id="nombre" type="text" placeholder="Ingrese nombre aqui" >
+        </div>
+
+        <div>
+          <label for="apellido">Apellido:</label>
+          <input name="apellido" id="apellido" type="text" placeholder="Ingrese apellido aqui" >
+        </div>
+        <div>
+          <label for="fecha">Fecha de nacimiento:</label>
+          <input name="fecha" id="fecha" type="date"  required>
+        </div>
+        <div>
+          <label for="telefono">Telefono:</label>
+          <input name="telefono" id="telefono" type="text" placeholder="Ingrese telefono aqui" >
+        </div>
+        <div>
+          <label for="pais">Pais:</label>
+          <select id="pais">
+            <option value="1">Paraguay</option>
+            <option value="2">Argentina</option>
+            <option value="3">Brasil</option>
+            <option value="4">Uruguay</option>
+            <option value="5">Bolivia</option>
+
+                </select>
+                <label for="ciudad">Ciudad:</label>
+                <select id="ciudad" >
+
+                  </select>
+        </div>
+        <div>
+          <input id="enviar" type="submit" value="Agregar">
+        </div>
+        <div>
+          <input id="limpiar" type="button" value="Limpiar">
+        </div>
+
+    </form>
+  </section>
+<div class="">
+<table border="2" id="tabla">
+<tr>
+  <th>Nombre</th>
+  <th>Apellido</th>
+  <th>Fecha de nacimiento</th>
+  <th>Telefono</th>
+  <th>Pais</th>
+  <th>Ciudad</th>
+</tr>
+
+</table>
+</div>
+
+</div>
+
+<!-- footer -->
+
+
+
+
+
+
+
+
+  </body>
+  <script type="text/javascript" src="script.js"></script>
+</html>

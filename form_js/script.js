@@ -1,11 +1,12 @@
 // declaraciones
-var env = document.getElementById("enviar");
-
+ var  env = document.getElementById("enviar");
+  var lim = document.getElementById("limpiar");
 var x = document.getElementById("pais");
 //x.addEventListener("focus", myFocusFunction, true);
 // eventos
 x.addEventListener("blur", cargar_ciudad, true);
 env.addEventListener("click", cargar_tabla, true);
+lim.addEventListener("click", limpiar_form, true);
 
 
 
@@ -31,10 +32,10 @@ var x = document.getElementById("pais").value;
  y.innerHTML  = op;
 }
 
+
+
 function cargar_tabla() {
   var tab = document.getElementById("tabla");
-//  var i = document.getElementById("texto_box");
-//    i.innerHTML  = x;
 var op;
 var nom = document.getElementById("nombre").value;
 var ape = document.getElementById("apellido").value;
@@ -49,10 +50,18 @@ var nuevo = "<tr> <td> "+ nom +"</td> <td>"+ ape +"</td> <td>"
 + nac +"</td> <td>"+ tel +"</td> <td>"+ text +"</td> <td>"
 + ciu +"</td> </tr>";
  tab.innerHTML  = op + nuevo;
-
+return false;
 }
 
+function limpiar_form() {
+    document.getElementById("nombre").value = "";
+    document.getElementById("apellido").value = "";
+    document.getElementById("fecha").value = "";
+   document.getElementById("telefono").value = "";
+   document.getElementById("pais").selectedIndex = 0;
+   document.getElementById("ciudad").innerHTML = "";
 
+}
 
 
 
