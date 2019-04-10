@@ -25,12 +25,17 @@ $("#enviar").click(function(){
   var tel = $("#telefono").val();
   var p = $("#pais option:selected ").text();
   var ciu = $("#ciudad").val();
- op = c.html();
- var nuevo = "<tr> <td> "+ nom +"</td> <td>"+ ape +"</td> <td>"
- + nac +"</td> <td>"+ tel +"</td> <td>"+ p +"</td> <td>"
- + ciu +"</td> </tr>";
-  c.html(op + nuevo);
- return false;
+
+if (validar()) {
+  op = c.html();
+  var nuevo = "<tr> <td> "+ nom +"</td> <td>"+ ape +"</td> <td>"
+  + nac +"</td> <td>"+ tel +"</td> <td>"+ p +"</td> <td>"
+  + ciu +"</td> </tr>";
+   c.html(op + nuevo);
+  return false;
+} else {
+alert("Debe completar los campos");
+}
 })
 
 $("#limpiar").click(function(){
@@ -45,3 +50,44 @@ $("#limpiar").click(function(){
 
  return false;
 })
+
+
+$("#login").submit(function(e) {
+e.preventDefault();
+});
+
+function validar(){
+
+  var nom = $("#nombre").val();
+  var ape = $("#apellido").val();
+  var nac = $("#fecha").val();
+  var tel = $("#telefono").val();
+  var p = $("#pais option:selected ").text();
+  var ciu = $("#ciudad").val();
+
+  if (nom == "") {
+    alert("Debe completar campo");
+    return false;
+}
+if (nom == "") {
+  alert("Debe completar campo");
+  return false;
+}
+if (ape == "") {
+    alert("Debe completar campo");
+    return false;
+}
+if (nac == null) {
+    alert("Debe completar campo");
+    return false;
+}
+if (p == null) {
+    alert("Debe completar campo");
+    return false;
+}
+if (ciu == null) {
+    alert("Debe completar campo");
+    return false;
+}
+return true;
+}
