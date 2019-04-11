@@ -34,7 +34,7 @@ if (validar()) {
    c.html(op + nuevo);
   return false;
 } else {
-alert("Debe completar los campos");
+//alert("Debe completar los campos");
 }
 })
 
@@ -65,29 +65,35 @@ function validar(){
   var p = $("#pais option:selected ").text();
   var ciu = $("#ciudad").val();
 
-  if (nom == "") {
-    alert("Debe completar campo");
-    return false;
-}
+
 if (nom == "") {
-  alert("Debe completar campo");
+  alert("Debe completar el nombre");
   return false;
 }
 if (ape == "") {
-    alert("Debe completar campo");
+    alert("Debe completar el apellido");
     return false;
 }
-if (nac == null) {
-    alert("Debe completar campo");
+if (!isDate(nac)) {
+    alert("Debe completar la fecha");
+    return false;
+}
+if (tel == "") {
+    alert("Debe completar la telefono");
     return false;
 }
 if (p == null) {
-    alert("Debe completar campo");
+    alert("Debe elejir un pais");
     return false;
 }
 if (ciu == null) {
-    alert("Debe completar campo");
+    alert("Debe elejir una ciudad");
     return false;
 }
 return true;
+}
+
+function isDate(val) {
+    var d = new Date(val);
+    return !isNaN(d.valueOf());
 }
