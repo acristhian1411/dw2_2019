@@ -57,37 +57,36 @@ e.preventDefault();
 });
 
 function validar(){
-
   var nom = $("#nombre").val();
   var ape = $("#apellido").val();
   var nac = $("#fecha").val();
   var tel = $("#telefono").val();
   var p = $("#pais option:selected ").text();
   var ciu = $("#ciudad").val();
-
+  $('#errores').html("");
 
 if (nom == "") {
-  alert("Debe completar el nombre");
-  return false;
+$('#errores').append("Debe completar el nombre");
+ return false;
 }
 if (ape == "") {
-    alert("Debe completar el apellido");
-    return false;
+  $('#errores').append("Debe completar el apellido");
+   return false;
 }
 if (!isDate(nac)) {
-    alert("Debe completar la fecha");
-    return false;
+  $('#errores').append("Debe completar la fecha");
+ return false;
 }
 if (tel == "") {
-    alert("Debe completar la telefono");
+  $('#errores').append("Debe completar el telefono");
     return false;
 }
 if (p == null) {
-    alert("Debe elejir un pais");
+  $('#errores').append("Debe elejir un pais");
     return false;
 }
 if (ciu == null) {
-    alert("Debe elejir una ciudad");
+  $('#errores').append("Debe elejir una ciudad");
     return false;
 }
 return true;
