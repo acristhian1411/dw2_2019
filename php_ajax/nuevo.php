@@ -4,6 +4,8 @@
   <head>
     <meta charset="utf-8">
     <title>Nueva Persona</title>
+    <script  src="jquery.min.js"></script>
+    
   </head>
   <body>
     <div class="mensajes">
@@ -24,7 +26,6 @@ include 'lista.php';
     </form>
     <a href="lista.php">Volver a la lista</a>
 
-  <script  src="jquery.min.js"></script>
 
   <script type="text/javascript">
   $("#btenviar").click(function ()
@@ -45,6 +46,8 @@ recargar_lista();
 });
 
    });
+
+
 function recargar_lista()
 {
   $.ajax(

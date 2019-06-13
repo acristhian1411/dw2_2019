@@ -7,7 +7,7 @@ $sql="delete from personas where id=".$_GET['id'];
 $res=mysqli_query($conex,$sql);
 if (mysqli_error($conex)==null)
 {
-header("Location: lista.php");
-}
+  echo 'ok';
+  } else { echo 'fail'; }
 }
  ?>
